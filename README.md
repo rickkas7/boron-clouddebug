@@ -114,18 +114,18 @@ the APN and external SIM enabled settings are stored in configuration flash and 
 
 ## To Remove
 
-- Go to the [firmware release site](https://github.com/particle-iot/firmware/releases/tag/v0.9.0) and download:
+- Go to the [firmware release site](https://github.com/particle-iot/device-os/releases/tag/v1.2.1) and download:
 
-  - [system-part1-0.9.0-boron.bin](https://github.com/particle-iot/device-os/releases/download/v0.9.0/system-part1-0.9.0-boron.bin)
-  - [tinker-0.9.0-boron.bin](https://github.com/particle-iot/device-os/releases/download/v0.9.0/tinker-0.9.0-boron.bin)
+  - [boron-system-part1@1.2.1.bin](https://github.com/particle-iot/device-os/releases/download/v1.2.1/boron-system-part1@1.2.1.bin)
+  - [boron-tinker@1.2.1.bin](https://github.com/particle-iot/device-os/releases/download/v1.2.1/boron-tinker@1.2.1.bin)
 
 - Put the Boron in DFU mode (blinking yellow) by pressing RESET and MODE at the same time. Release RESET and continue to hold down MODE. The status LED should blink magenta (red and blue at the same time) then yellow. Once blinking yellow, release MODE.
 - Flash the firmware from a command prompt or terminal window:
 
 ```
 cd Downloads
-particle flash --usb system-part1-0.9.0-boron.bin
-particle flash --usb tinker-0.9.0-boron.bin
+particle flash --usb boron-system-part1@1.2.1.bin
+particle flash --usb boron-tinker@1.2.1.bin
 ```
 
-If you've upgraded to a version newer than 0.9.0 you should restore that version instead.
+If you've upgraded to a version newer than 1.2.1 you should restore that version instead.
