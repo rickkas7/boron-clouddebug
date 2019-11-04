@@ -40,22 +40,28 @@ The source code is in this repository so you can see how it works, however you n
 
 ## Prerequisites 
 
-- You should have the [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/) installed.
+- You should have the [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/) version 1.49.0 or later installed.
+- To update the CLI, use the command: `particle update-cli`.
 
 ## To Install 
 
-- Download one of the boron-clouddebug.bin files from this repository. You should download the 0.9.0 version unless you've upgraded your device, in which case you should use the closest version not larger than the version on your device. You only need one of these!
+If your Boron is not running Device OS 1.4.2 or later you should upgrade. If you're not sure, it doesn't hurt to do this step:
 
-  - [boron-clouddebug-v0.9.0.bin](https://github.com/rickkas7/boron-clouddebug/raw/master/boron-clouddebug-v0.9.0.bin)
-  - [boron-clouddebug-v1.2.0-beta.1.bin](https://github.com/rickkas7/boron-clouddebug/raw/master/boron-clouddebug-v1.2.0-beta.1.bin)
-  - [boron-clouddebug-v1.1.0.bin](https://github.com/rickkas7/boron-clouddebug/raw/master/boron-clouddebug-v1.1.0.bin)
+Put the device in DFU mode (blinking yellow) by holding down RESET and MODE, releasing RESET while continuing to hold down MODE. The main status LED will blink magenta (blue and red at the same time), then yellow. Once blinking yellow, release SETUP.
 
-- Put the Boron in DFU mode (blinking yellow) by pressing RESET and MODE at the same time. Release RESET and continue to hold down MODE. The status LED should blink magenta (red and blue at the same time) then yellow. Once blinking yellow, release MODE.
-- Flash the firmware from a command prompt or terminal window:
+From a Command Prompt or Terminal window:
+
+```
+particle update
+```
+
+Download the [boron.bin](https://github.com/rickkas7/boron-clouddebug/raw/master/boron.bin) file. Click on that link and then the Download button on the page that displays, don't just right click and Save Link As.
+
+If device is not blinking yellow, repeat the steps above to put it back in DFU mode, then:
 
 ```
 cd Downloads
-particle flash --usb boron-clouddebug-v0.9.0.bin
+particle flash --usb boron.bin
 ```
 
 - After flashing is complete, press RESET.
@@ -64,10 +70,6 @@ particle flash --usb boron-clouddebug-v0.9.0.bin
 ```
 particle serial monitor
 ```
-
-- If you want to use the optional commands like
-
-
 
 
 ## Doing a carrier scan (Boron 2G/3G only)
@@ -114,18 +116,11 @@ the APN and external SIM enabled settings are stored in configuration flash and 
 
 ## To Remove
 
-- Go to the [firmware release site](https://github.com/particle-iot/device-os/releases/tag/v1.2.1) and download:
+You can just flash a different binary over it, or restore Tinker:
 
-  - [boron-system-part1@1.2.1.bin](https://github.com/particle-iot/device-os/releases/download/v1.2.1/boron-system-part1@1.2.1.bin)
-  - [boron-tinker@1.2.1.bin](https://github.com/particle-iot/device-os/releases/download/v1.2.1/boron-tinker@1.2.1.bin)
-
-- Put the Boron in DFU mode (blinking yellow) by pressing RESET and MODE at the same time. Release RESET and continue to hold down MODE. The status LED should blink magenta (red and blue at the same time) then yellow. Once blinking yellow, release MODE.
-- Flash the firmware from a command prompt or terminal window:
+Put the Boron in DFU mode (blinking yellow) by pressing RESET and SETUP. Release RESET and continue to hold down SETUP while the LED blinks magenta until it blinks yellow, then release SETUP.
 
 ```
-cd Downloads
-particle flash --usb boron-system-part1@1.2.1.bin
-particle flash --usb boron-tinker@1.2.1.bin
+particle update
+particle flash --usb tinker
 ```
-
-If you've upgraded to a version newer than 1.2.1 you should restore that version instead.
