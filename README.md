@@ -4,6 +4,13 @@
 
 *Special code for debugging cloud connection issues with the Particle Boron*
 
+## Wait!
+
+There is a newer and better version of cloud debug in the Particle Github. You should use that version instead:
+
+[https://github.com/particle-iot/cloud-debug](https://github.com/particle-iot/cloud-debug)
+
+
 ## What is this?
 
 This is a tool to debug cloud connection issues. It:
